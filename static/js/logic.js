@@ -21,10 +21,10 @@ function createEarthquakes(earthquakeData) {
     var depth = earthquakeData[i].geometry.coordinates[2]
 
   var color = "";
-      if (depth < 10){color = "DarkOrange"}
-      else if (depth < 30) {color = "Tomato"}
-      else if (depth < 50) {color = "DarkSalmon"}
-      else if (depth < 70) {color = "Blue"}
+      if (depth < 10){color = "Green"}
+      else if (depth < 30) {color = "Yellow"}
+      else if (depth < 50) {color = "Orange"}
+      else if (depth < 70) {color = "DarkSalmon"}
       else if (depth < 90) {color = "Red"}
       else {color = "DarkRed"}
 
@@ -46,21 +46,6 @@ function createEarthquakes(earthquakeData) {
   createMap(earthquakes);
 
 }
-  // Give each feature a popup describing the place and time of the earthquake
-  //function onEachFeature(feature, layer) {
-  //  layer.bindPopup("<h3>" + feature.properties.place +
-  //    "</h3><hr><p>" + new Date(feature.properties.time) + "</p>");
- // }
-
-  // Create a GeoJSON layer containing the features array on the earthquakeData object
-  // Run the onEachFeature function once for each piece of data in the array
-  //var earthquakes = L.geoJSON(earthquakeData, {
- //   onEachFeature: onEachFeature
- // });
-
-  // Sending our earthquakes layer to the createMap function
- // createMap(earthquakes);
-
 
 function createMap(earthquakes) {
 
@@ -108,10 +93,10 @@ function createMap(earthquakes) {
     collapsed: false
   }).addTo(myMap);
   function legendColor(depth){
-    if (depth < 10){return "DarkOrange"}
-    else if (depth < 30) {return "Tomato"}
-    else if (depth < 50) {return "DarkSalmon"}
-    else if (depth < 70) {return "Blue"}
+    if (depth < 10){return "Green"}
+    else if (depth < 30) {return "Yellow"}
+    else if (depth < 50) {return "Orange"}
+    else if (depth < 70) {return "DarkSalmon"}
     else if (depth < 90) {return "Red"}
     else {return "DarkRed"}
 }  
